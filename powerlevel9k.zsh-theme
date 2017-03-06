@@ -744,7 +744,7 @@ prompt_rvm() {
   local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
 
   if [[ -n "$version$gemset" ]]; then
-    "$1_prompt_segment" "$0" "$2" "240" "$DEFAULT_COLOR" "$version$gemset" 'RUBY_ICON'
+    "$1_prompt_segment" "$0" "$2" "white" "$DEFAULT_COLOR" "$version$gemset" 'RUBY_ICON'
   fi
 }
 
@@ -825,7 +825,7 @@ build_test_stats() {
 
 # System time
 prompt_time() {
-  local time_format="%D{%H:%M:%S}"
+  local time_format="%D{%H:%M}"
   if [[ -n "$POWERLEVEL9K_TIME_FORMAT" ]]; then
     time_format="$POWERLEVEL9K_TIME_FORMAT"
   fi
@@ -1061,8 +1061,9 @@ powerlevel9k_init() {
       print -P "\t%F{red}WARNING!%f %F{blue}export LANG=\"en_US.UTF-8\"%f at the top of your \~\/.zshrc is sufficient."
   fi
 
-  defined POWERLEVEL9K_LEFT_PROMPT_ELEMENTS || POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
-  defined POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS || POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+  # PROMPT ELEMENTS
+  defined POWERLEVEL9K_LEFT_PROMPT_ELEMENTS || POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+  defined POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS || POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rvm  node_version root_indicator background_jobs)
 
   # Display a warning if deprecated segments are in use.
   typeset -AH deprecated_segments
@@ -1093,4 +1094,3 @@ powerlevel9k_init() {
 }
 
 powerlevel9k_init "$@"
-

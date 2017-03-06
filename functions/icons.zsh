@@ -46,11 +46,6 @@ case $POWERLEVEL9K_MODE in
       SUNOS_ICON                     $'\U1F31E '            # 🌞
       HOME_ICON                      $'\uE12C'              # 
       HOME_SUB_ICON                  $'\uE18D'              # 
-      FOLDER_ICON                    $'\uE818'              # 
-      NETWORK_ICON                   $'\uE1AD'              # 
-      LOAD_ICON                      $'\uE190 '             # 
-      SWAP_ICON                      $'\uE87D'              # 
-      RAM_ICON                       $'\uE1E2 '             # 
       SERVER_ICON                    $'\uE895'              # 
       VCS_UNTRACKED_ICON             $'\uE16C'              # 
       VCS_UNSTAGED_ICON              $'\uE17C'              # 
@@ -124,7 +119,7 @@ case $POWERLEVEL9K_MODE in
       VCS_GIT_ICON                   $'\uF113 '             # 
       VCS_HG_ICON                    $'\uF0C3 '             # 
       VCS_SVN_ICON                   '(svn) '
-      RUST_ICON                      $'\uE6A8'              #  
+      RUST_ICON                      $'\uE6A8'              # 
       PYTHON_ICON                    $'\U1F40D'             # 🐍
     )
   ;;
@@ -147,8 +142,6 @@ case $POWERLEVEL9K_MODE in
       TODO_ICON                      $'\u2611'              # ☑
       BATTERY_ICON                   $'\U1F50B'             # 🔋
       OK_ICON                        $'\u2713'              # ✓
-      FAIL_ICON                      $'\u2718'              # ✘
-      SYMFONY_ICON                   'SF'
       NODE_ICON                      $'\u2B22'              # ⬢
       MULTILINE_FIRST_PROMPT_PREFIX  $'\u256D'$'\u2500'
       MULTILINE_SECOND_PROMPT_PREFIX $'\u2570'$'\u2500 '
@@ -179,9 +172,7 @@ case $POWERLEVEL9K_MODE in
       VCS_HG_ICON                    ''
       VCS_SVN_ICON                   ''
 	    RUST_ICON                      ''
-      PYTHON_ICON                    ''
-    )
-  ;;
+      PYTHON_ICON                    ''DIR_
 esac
 
 # Override the above icon settings with any user-defined variables.
@@ -221,4 +212,4 @@ get_icon_names() {
   for key in ${(@k)icons}; do
     echo "POWERLEVEL9K_$key: ${icons[$key]}"
   done
-}
+}DIR_
