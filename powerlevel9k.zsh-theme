@@ -98,6 +98,10 @@ else
   DEFAULT_COLOR_INVERTED=white
 fi
 
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
 ################################################################
 # Prompt Segment Constructors
 #
